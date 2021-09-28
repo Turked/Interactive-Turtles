@@ -5,14 +5,14 @@ from clickableturtle import ClickableTurtle
 
 # set up instance of the screen
 window = Screen()
-window.setup(800, 500)
+window.setup(600, 400)
 
 # set up clickable instance
 button = ClickableTurtle()
 
 #set up players
 player_1 = KeyboardTurtle(window)
-player_2 = KeyboardTurtle(window, "w", "d")
+player_2 = KeyboardTurtle(window, "w", "s", "a", "d")
 
 player_1.goto(100,0)
 

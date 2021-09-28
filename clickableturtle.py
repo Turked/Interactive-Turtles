@@ -18,7 +18,7 @@ class ClickableTurtle(Turtle):
     #set turtle starting states
     self.shape("square")
     self.shapesize(1,3,1)
-    self.color("tan")
+    self.color("blue")
     self.penup()
     self.setx(self.x)
     self.sety(self.y)
@@ -35,8 +35,8 @@ class ClickableTurtle(Turtle):
   # tells what happens when button is clicked
   def click(self, x, y):
     # This is Placeholder:  What should this button do?
-    print ("Click")
+    print ("HA you thought something would happen didn't you")
 
   # TODO:  
-  # 1) Change the button color 
-  # 2) make the click method do something else
+  # 1) Change the button color (from tan to blue)
+  # 2) make the click method do something else (HA)
