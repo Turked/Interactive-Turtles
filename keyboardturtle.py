@@ -1,4 +1,6 @@
 from turtle import Turtle
+from random import randint
+
 
 class KeyboardTurtle(Turtle):
   # our 'wrapper' class of the Turtle class
@@ -35,20 +37,34 @@ class KeyboardTurtle(Turtle):
     self.movement_speed = 5
     self.turn_speed = 45
     self.collision_distance = 20
+    self.amount = 0
+
 
   # Movement Methods
   def go_forward(self):
     self.forward(self.movement_speed)
     if self.check_collision(self.other_player):
-      print("crash")
-      quit()
+      print("gem collected")
+      self.amount += 1
+      print(self.amount)
+      x_location = randint(-180, 180)
+      y_location = randint(-180, 180)
+      self.other_player.goto(x_location, y_location)
+
       
   def go_nstraight(self):
     self.forward(-self.movement_speed)
     if self.check_collision(self.other_player):
-      print("crash")
-      quit()
-      
+      print("gem collected")
+      self.amount += 1
+      print(self.amount)
+      x_location = randint(-180, 180)
+      y_location = randint(-180, 180)
+      self.other_player.goto(x_location, y_location)
+
+
+
+
   def go_right(self):
     self.right(self.turn_speed)
 

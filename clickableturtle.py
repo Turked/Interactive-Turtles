@@ -1,3 +1,5 @@
+''''
+
 from turtle import Turtle, Screen
 
 class ClickableTurtle(Turtle):
@@ -18,7 +20,7 @@ class ClickableTurtle(Turtle):
     #set turtle starting states
     self.shape("square")
     self.shapesize(1,3,1)
-    self.color("blue")
+    self.color("black")
     self.penup()
     self.setx(self.x)
     self.sety(self.y)
@@ -40,3 +42,6 @@ class ClickableTurtle(Turtle):
   # TODO:  
   # 1) Change the button color (from tan to blue)
   # 2) make the click method do something else (HA)
+
+
+'''
