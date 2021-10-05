@@ -64,6 +64,7 @@ class KeyboardTurtle(Turtle):
       y_location = randint(-180, 180)
       self.other_player.speed(0)
       self.other_player.goto(x_location, y_location)
+      slef.other_player.speed(6)
 
 
 
