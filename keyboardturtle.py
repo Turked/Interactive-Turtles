@@ -49,7 +49,9 @@ class KeyboardTurtle(Turtle):
       print(self.amount)
       x_location = randint(-180, 180)
       y_location = randint(-180, 180)
+      self.other_player.speed(0)
       self.other_player.goto(x_location, y_location)
+      self.other_player.speed(6)
 
       
   def go_nstraight(self):
@@ -60,6 +62,7 @@ class KeyboardTurtle(Turtle):
       print(self.amount)
       x_location = randint(-180, 180)
       y_location = randint(-180, 180)
+      self.other_player.speed(0)
       self.other_player.goto(x_location, y_location)
 
 
