@@ -1,13 +1,13 @@
-''''
 
+#from keyboardturtle import amount
 from turtle import Turtle, Screen
 
 class ClickableTurtle(Turtle):
   # our 'wrapper' class of the Turtle class
   def __init__(self, 
-               name = "button", 
-               x = 0 , 
-               y = -100):
+               name = "amount", 
+               x = 150 , 
+               y = 160):
     # Runs Keyboard Turtle Constructor as well as the Turtle Constructor
     Turtle.__init__(self)
     
@@ -44,4 +44,3 @@ class ClickableTurtle(Turtle):
   # 2) make the click method do something else (HA)
 
 
-'''

@@ -3,7 +3,7 @@ from turtle import Screen
 from random import randint
 from helper import randcolor
 from keyboardturtle import KeyboardTurtle
-#from clickableturtle import ClickableTurtle
+from clickableturtle import ClickableTurtle
 #from movingturtle import MovingTurtle
 
 
@@ -15,7 +15,7 @@ window.setup(screen_width, screen_height)
 
 
 # set up clickable button:
-#button = ClickableTurtle()
+button = ClickableTurtle()
 
 
 
@@ -23,7 +23,10 @@ window.setup(screen_width, screen_height)
 
 
 #Game setup:
-# I want to add an image for the background
+# randbackground()
+print("Here's the deal.")
+print("Your a turtle and a theif.")
+print("Now go get that gem!")
 
 
 #Player setup:
