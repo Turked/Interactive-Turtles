@@ -1,6 +1,0 @@
-Make the brick background using the image (V)
-Make Walls to create a maze (V) or make huge turtles and run a crash command
-Make the maze randomly generate (V)
-Make floor/background randomly generate (V)
-Set up a score board within the game if possible (V)
-Add easter eggs (V) if amount = ###: print("egg")

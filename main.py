@@ -1,21 +1,19 @@
 #Importation:
 from turtle import Screen
-from random import randint
 from helper import randcolor
 from keyboardturtle import KeyboardTurtle
-from clickableturtle import ClickableTurtle
-#from movingturtle import MovingTurtle
-
+from gem import Gem
+from wall import Wall
 
 # Setting up the screen:
 window = Screen()
-screen_width = 400
+screen_width = 600
 screen_height = 400
 window.setup(screen_width, screen_height)
 
 
 # set up clickable button:
-button = ClickableTurtle()
+
 
 
 
@@ -23,32 +21,38 @@ button = ClickableTurtle()
 
 
 #Game setup:
+
+#Screen:
 # randbackground()
+
+#List setup:
+wall_list = []
+
+w1 = Wall(100, 0, 1, 5)
+wall_list.append(w1)
+wall_list.append(Wall(0, 100, 5, 1))
+
+
+#Text
 print("Here's the deal.")
 print("Your a turtle and a theif.")
 print("Now go get that gem!")
+print(" ")
 
 
 #Player setup:
-player_2 = KeyboardTurtle(window, "w", "s", "a", "d")
+player_2 = KeyboardTurtle(window, "w", "s", "a", "d", walls = wall_list)
 player_2.color(randcolor())
-gem = KeyboardTurtle(window)
-x_location = randint(screen_width/4*-1, screen_width/4)
-y_location = randint(screen_height/4*-1, screen_width/4)
-gem.speed(0)
-gem.goto(x_location, y_location)
-gem.left(45)
-gem.shape("square")
-gem.shapesize(1, 1)
-gem.color("Lime")
-gem.speed(6)
+
+gem = Gem(screen_width, screen_height)
+
+
 
 
 #Setting setup:
 
 
 # Setting up collision check:
-gem.other_player = player_2
 player_2.other_player = gem
 
 # This is needed to listen for inputs

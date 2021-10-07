@@ -2,7 +2,7 @@
 #from keyboardturtle import amount
 from turtle import Turtle, Screen
 
-class ClickableTurtle(Turtle):
+class Text(Turtle):
   # our 'wrapper' class of the Turtle class
   def __init__(self, 
                name = "amount", 
@@ -16,6 +16,7 @@ class ClickableTurtle(Turtle):
     self.x = x
     self.y = y
     self.window = Screen()
+    
 
     #set turtle starting states
     self.shape("square")
@@ -24,12 +25,13 @@ class ClickableTurtle(Turtle):
     self.penup()
     self.setx(self.x)
     self.sety(self.y)
-    self.draw_title(self.name, self.x, self.y)
+    
     self.window.onscreenclick(None)
     self.onclick(self.click)
 
   # Draws the button name above the button
-  def draw_title(self, text, x, y):
+  def draw_title(self, text):
+    self.clear()
     self.goto(self.x, self.y + 17)
     self.write(text, move=False, align='center', font=('Arial', 10, 'normal'))
     self.goto(self.x, self.y)

@@ -1,6 +1,8 @@
 #Importation
 from turtle import Turtle
 from random import randint
+from clickableturtle import Text
+from time import time
 
 #Setup:
 class KeyboardTurtle(Turtle):
@@ -10,7 +12,8 @@ class KeyboardTurtle(Turtle):
                backward = "Down",
                turn_left = "Left",
                turn_right = "Right", 
-               other_player = None):
+               other_player = None,
+               walls = None): #7:31/20:16
     Turtle.__init__(self)
     
     # Sets up incoming variables:
@@ -20,6 +23,7 @@ class KeyboardTurtle(Turtle):
     self.turn_right = turn_right
     self.turn_left = turn_left
     self.other_player = other_player
+    self.text = Text()
 
     #set turtle starting states:
     self.shape("turtle")
@@ -37,32 +41,38 @@ class KeyboardTurtle(Turtle):
     self.turn_speed = 45
     self.collision_distance = 20
     self.amount = 0
+    self.canCollect = True
 
 
   # Movement Methods/defining above Keyboard Commands:
   def go_forward(self):
     self.forward(self.movement_speed)
     if self.check_collision(self.other_player):
-      print("gem collected")
-      self.amount += 1
-      print(self.amount)
-      x_location = randint(-180, 180)
-      y_location = randint(-180, 180)
-      self.other_player.speed(0)
-      self.other_player.goto(x_location, y_location)
-      self.other_player.speed(6)
+      if self.canCollect:
+        self.canCollect = False
+        self.amount += 1
+        self.text.draw_title(str(self.amount))
+        print("gem collected (" + str(self.amount) + ")")
+        x_location = randint(-180, 180)
+        y_location = randint(-180, 180)
+        self.other_player.speed(0)
+        self.other_player.goto(x_location, y_location)
+        self.other_player.speed(6)
+        self.wait(.5)
 
   def go_nstraight(self):
     self.forward(-self.movement_speed)
     if self.check_collision(self.other_player):
-      print("gem collected")
-      self.amount += 1
-      print(self.amount)
-      x_location = randint(-180, 180)
-      y_location = randint(-180, 180)
-      self.other_player.speed(0)
-      self.other_player.goto(x_location, y_location)
-      self.other_player.speed(6)
+      if self.canCollect:
+        self.canCollect = False
+        self.amount += 1
+        print("gem collected (" + str(self.amount) + ")")
+        x_location = randint(-180, 180)
+        y_location = randint(-180, 180)
+        self.other_player.speed(0)
+        self.other_player.goto(x_location, y_location)
+        self.other_player.speed(6)
+        self.wait(.5)
 
   def go_right(self):
     self.right(self.turn_speed)
@@ -70,6 +80,12 @@ class KeyboardTurtle(Turtle):
   def go_left(self):
     self.left(self.turn_speed)
 
+  def wait(self, seconds):
+    start_time = time()
+    end_time = start_time + seconds
+    while time() < end_time:
+      pass
+    self.canCollect = True
 
   # Useful Methods:
 
