@@ -13,7 +13,7 @@ class KeyboardTurtle(Turtle):
                turn_left = "Left",
                turn_right = "Right", 
                other_player = None,
-               walls = None): #7:31/20:16
+               walls = None):
     Turtle.__init__(self)
     
     # Sets up incoming variables:
@@ -24,6 +24,7 @@ class KeyboardTurtle(Turtle):
     self.turn_left = turn_left
     self.other_player = other_player
     self.text = Text()
+    self.walls = walls
 
     #set turtle starting states:
     self.shape("turtle")
@@ -40,13 +41,18 @@ class KeyboardTurtle(Turtle):
     self.movement_speed = 5
     self.turn_speed = 45
     self.collision_distance = 20
+
     self.amount = 0
     self.canCollect = True
 
 
   # Movement Methods/defining above Keyboard Commands:
   def go_forward(self):
+    #Move forward
+    last_position = (self.xcor(), self.ycore())
+    collided = False
     self.forward(self.movement_speed)
+    #Check for collision with gem
     if self.check_collision(self.other_player):
       if self.canCollect:
         self.canCollect = False
@@ -60,8 +66,21 @@ class KeyboardTurtle(Turtle):
         self.other_player.speed(6)
         self.wait(.5)
 
+    #Check for collision with walls
+    if self.walls !=None:
+      for wall in self.walls:
+        if self.check_wall_collision(wall):
+          collided = True
+          break
+      if collided:
+        self.goto(last_position)
+
   def go_nstraight(self):
+    #Move forward
+    last_position = (self.xcor(), self.ycore())
+    collided = False
     self.forward(-self.movement_speed)
+    #Check for collision with gem
     if self.check_collision(self.other_player):
       if self.canCollect:
         self.canCollect = False
@@ -73,6 +92,15 @@ class KeyboardTurtle(Turtle):
         self.other_player.goto(x_location, y_location)
         self.other_player.speed(6)
         self.wait(.5)
+
+    #Check for collision with walls
+    if self.walls !=None:
+      for wall in self.walls:
+        if self.check_wall_collision(wall):
+          collided = True
+          break
+      if collided:
+        self.goto(last_position)
 
   def go_right(self):
     self.right(self.turn_speed)
@@ -90,14 +118,16 @@ class KeyboardTurtle(Turtle):
   # Useful Methods:
 
   # This checks if object collides with another object:
-  def check_collision(self, obj_to_check):
+  def check_wall_collision(self, obj_to_check):
+    turtle_rad = 10
+    wall_rad = 10
     distance_x = obj_to_check.xcor() - self.xcor()
     distance_x = abs(distance_x)
 
     distance_y = obj_to_check.ycor() - self.ycor()
     distance_y = abs(distance_y)
-
-    if distance_x < self.collision_distance and distance_y < self.collision_distance:
+    #18:16/20:16
+    if distance_x < turtle_rad + (wall_rad * obj_to_check.x_size) and distance_y < self.collision_distance:
       return True
     else:
       return False    
