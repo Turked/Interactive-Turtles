@@ -7,8 +7,10 @@ from wall import Wall
 
 # Setting up the screen:
 window = Screen()
-screen_width = 600
-screen_height = 400
+#2:51/8:17
+#window.bgpic("bitfloor.png")
+screen_width = 512
+screen_height = 512
 window.setup(screen_width, screen_height)
 
 
@@ -28,7 +30,7 @@ window.setup(screen_width, screen_height)
 #List setup:
 wall_list = []
 
-w1 = Wall(100, 0, 1, 5)
+w1 = Wall(100, 0, 1, 3)
 wall_list.append(w1)
 wall_list.append(Wall(0, 100, 5, 1))
 

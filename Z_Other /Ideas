@@ -1,5 +1,5 @@
 Make the brick background using the image (V) (wait)
-Make Walls to create a maze (V) (Video)
-Make the maze randomly generate (V) (Video)
+Make Walls to create a maze (V)
+Make the maze randomly generate (V)
 Make floor/background randomly generate (V) (wait)
-Add easter eggs (V) if amount = ###: print("egg")
+Add easter eggs (V) if amount = ###: print("egg") (V)

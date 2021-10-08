@@ -123,11 +123,10 @@ class KeyboardTurtle(Turtle):
     wall_rad = 10
     distance_x = obj_to_check.xcor() - self.xcor()
     distance_x = abs(distance_x)
-
+    
     distance_y = obj_to_check.ycor() - self.ycor()
     distance_y = abs(distance_y)
-    #18:16/20:16
-    if distance_x < turtle_rad + (wall_rad * obj_to_check.x_size) and distance_y < self.collision_distance:
+    if distance_x < turtle_rad + (wall_rad * obj_to_check.x_size) and distance_y < turtle_rad + (wall_rad * obj_to_check.y_size):
       return True
     else:
       return False    
