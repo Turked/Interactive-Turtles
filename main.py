@@ -4,19 +4,15 @@ from helper import randcolor
 from keyboardturtle import KeyboardTurtle
 from gem import Gem
 from wall import Wall
+from helper import randbackground
+from random import randint
 
 # Setting up the screen:
 window = Screen()
-#2:51/8:17
-#window.bgpic("bitfloor.png")
-screen_width = 512
-screen_height = 512
+window.bgpic(randbackground())
+screen_width = 600
+screen_height = 400
 window.setup(screen_width, screen_height)
-
-
-# set up clickable button:
-
-
 
 
 #Setting up game and overall setting:
@@ -25,11 +21,12 @@ window.setup(screen_width, screen_height)
 #Game setup:
 
 #Screen:
-# randbackground()
+
 
 #List setup:
 wall_list = []
-
+#How do I make multiple walls (V)
+#Make a wall on the score board
 w1 = Wall(100, 0, 1, 3)
 wall_list.append(w1)
 wall_list.append(Wall(0, 100, 5, 1))

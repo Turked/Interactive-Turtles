@@ -49,7 +49,7 @@ class KeyboardTurtle(Turtle):
   # Movement Methods/defining above Keyboard Commands:
   def go_forward(self):
     #Move forward
-    last_position = (self.xcor(), self.ycore())
+    last_position = (self.xcor(), self.ycor())
     collided = False
     self.forward(self.movement_speed)
     #Check for collision with gem
@@ -77,7 +77,7 @@ class KeyboardTurtle(Turtle):
 
   def go_nstraight(self):
     #Move forward
-    last_position = (self.xcor(), self.ycore())
+    last_position = (self.xcor(), self.ycor())
     collided = False
     self.forward(-self.movement_speed)
     #Check for collision with gem
@@ -127,6 +127,17 @@ class KeyboardTurtle(Turtle):
     distance_y = obj_to_check.ycor() - self.ycor()
     distance_y = abs(distance_y)
     if distance_x < turtle_rad + (wall_rad * obj_to_check.x_size) and distance_y < turtle_rad + (wall_rad * obj_to_check.y_size):
+      return True
+    else:
+      return False    
+
+  def check_collision(self, obj_to_check):
+    distance_x = obj_to_check.xcor() - self.xcor()
+    distance_x = abs(distance_x)
+    
+    distance_y = obj_to_check.ycor() - self.ycor()
+    distance_y = abs(distance_y)
+    if distance_x < self.collision_distance and distance_y < self.collision_distance:
       return True
     else:
       return False    

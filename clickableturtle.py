@@ -6,7 +6,7 @@ class Text(Turtle):
   # our 'wrapper' class of the Turtle class
   def __init__(self, 
                name = "amount", 
-               x = 150 , 
+               x = 260 , 
                y = 160):
     # Runs Keyboard Turtle Constructor as well as the Turtle Constructor
     Turtle.__init__(self)

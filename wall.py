@@ -1,4 +1,5 @@
 from turtle import Turtle
+from helper import randcolorwall
 
 
 class Wall (Turtle):
@@ -9,7 +10,7 @@ class Wall (Turtle):
         self.x_size = x_size
         self.y_size = y_size
         # General setup
-        self.color("brown") #Make this randimized
+        self.color(randcolorwall())
         self.penup()
         self.shape("square")
         self.shapesize(self.y_size, self.x_size)
