@@ -1,11 +1,12 @@
 #Importation:
 from turtle import Screen
-from helper import randcolor
+from helper import randcolor, randcolorwall, randbackground
 from keyboardturtle import KeyboardTurtle
 from gem import Gem
 from wall import Wall
-from helper import randbackground
 from random import randint
+from time import time
+
 
 # Setting up the screen:
 window = Screen()
@@ -25,11 +26,22 @@ window.setup(screen_width, screen_height)
 
 #List setup:
 wall_list = []
-#How do I make multiple walls (V)
-#Make a wall on the score board
-w1 = Wall(100, 0, 1, 3)
+w1 = Wall(256, 190, 4, 4)
 wall_list.append(w1)
-wall_list.append(Wall(0, 100, 5, 1))
+
+#Vertical walls:
+color = randcolorwall() #Maroon shouldn't exist as a color but it does
+for wall in range (10):
+  wall_list.append(Wall(randint(-300, 300), randint(-200, 200), .5, randint(5, 10)))
+  wall_list[len(wall_list)-1].color(color)
+
+
+#Horizontal walls:
+for wall in range (10):
+  wall_list.append(Wall(randint(-300, 300), randint(-200, 200), randint(5, 10), .5))
+  wall_list[len(wall_list)-1].color(color)
+
+
 
 
 #Text
@@ -57,3 +69,4 @@ player_2.other_player = gem
 # This is needed to listen for inputs
 window.listen()
 window.mainloop()
+

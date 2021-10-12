@@ -1,3 +1,7 @@
-Make Walls to create a maze (V)
-Make the maze randomly generate (V)
+Make it look better less cheap (all connecting) (V)
+Make a restart method 
+make background and wall color make sense
+Make high score
+Make score board better
+
 Add easter eggs (V) if amount = ###: print("egg") (V)

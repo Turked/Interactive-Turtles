@@ -12,11 +12,11 @@ def randbackground():
   return choice(option)
 
 def randcolorwall():
-  alternative = ["brown", "grey", "black", "maroon", "blanched almond"]
+  alternative = ["brown", "grey", "black"]
   return choice(alternative)
 
-'''
+""""
 def randsizewall():
-  alternative = ["brown", "grey", "black", "maroon", "blanched almond"]
-  return choice(alternative)
-'''
+  possibility = []
+  return choice(possibility)
+"""
