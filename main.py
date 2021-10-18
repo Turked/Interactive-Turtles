@@ -31,16 +31,23 @@ wall_list.append(w1)
 
 #Vertical walls:
 color = randcolorwall() #Maroon shouldn't exist as a color but it does
-for wall in range (10):
-  wall_list.append(Wall(randint(-300, 300), randint(-200, 200), .5, randint(5, 10)))
+for wall in range (5):
+  wall_list.append(Wall(randint(-300, -10), randint(-200, -10), .5, randint(5, 10)))
+  wall_list[len(wall_list)-1].color(color)
+
+for wall in range (5):
+  wall_list.append(Wall(randint(-300, -10), randint(-10, 200), .5, randint(5, 10)))
   wall_list[len(wall_list)-1].color(color)
 
 
 #Horizontal walls:
-for wall in range (10):
-  wall_list.append(Wall(randint(-300, 300), randint(-200, 200), randint(5, 10), .5))
+for wall in range (5):
+  wall_list.append(Wall(randint(-300, -10), randint(-200, -10), randint(5, 10), .5))
   wall_list[len(wall_list)-1].color(color)
 
+for wall in range (5):
+  wall_list.append(Wall(randint(-300, 300), randint(-10, 200), randint(5, 10), .5))
+  wall_list[len(wall_list)-1].color(color)
 
 
 

@@ -1,7 +1,6 @@
 Make it look better less cheap (all connecting) (V)
-Make a restart method 
-make background and wall color make sense
-Make high score
-Make score board better
+Make a restart method (V)
+make background and wall color make sense (V)
+Make high score (V)
 
 Add easter eggs (V) if amount = ###: print("egg") (V)
