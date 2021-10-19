@@ -5,7 +5,7 @@ from keyboardturtle import KeyboardTurtle
 from wall_random import WallRandom
 from gem import Gem
 from wall import Wall
-from random import randint
+from random import randint, choice
 from time import time
 
 
@@ -34,13 +34,16 @@ wall_list = []
 
 
 #Vairaibles:
-starting_wall = Wall(-280, 180, 1, 5)
+starting_wall = Wall(-50, 180, 1, 5)
 last_x = starting_wall.xcor()
 last_y = starting_wall.ycor()
 last_width = starting_wall.x_size
 last_height = starting_wall.y_size
 
-callibration = [-10, 1, 10]
+def callibration():
+  notch = [-10, 1, 10]
+  return choice(notch)
+
 
 #Creation of the first wall:
 wall_list.append(starting_wall)
@@ -51,7 +54,7 @@ for i in range(5):
 # Horrizontal Wall
   my_width = randint(3, 6)
   my_height = 1
-  last_x = last_x + (my_width * 10) - 10
+  last_x = last_x + (my_width * callibration()) - 10
   last_y = last_y - (last_height) * 10
   last_width = my_width
   last_height = my_height
