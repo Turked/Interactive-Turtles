@@ -22,16 +22,15 @@ window.setup(screen_width, screen_height)
 
 #Game setup:
 
+
 #Screen:
-
-
 
 
 #Mega Walls:________________________________________
 
 #Setup:
 wall_list = []
-starting_wall = Wall(randint(250, 300), 180, 1, 5) # I want this to match the others color
+starting_wall = Wall(randint(250, 300), 180, 1, 5)
 
 
 #Vairaibles:
@@ -39,8 +38,13 @@ last_x = starting_wall.xcor()
 last_y = starting_wall.ycor()
 last_width = starting_wall.x_size
 last_height = starting_wall.y_size
-color = randcolorwall() #Maroon shouldn't exist as a color but it does
+color = randcolorwall()
+starting_wall.color(color)
 
+''' This no work IDK how to make work
+if randbackground("z_floor1.gif"):
+  color = "red"
+'''
 
 def callibration():
   notch = [-10, 1, 10]
@@ -50,13 +54,14 @@ def callibration():
 #Creation of the first wall:
 wall_list.append(starting_wall)
 
-#I wanna add a penup command as to create gaps in the walls
+#I wanna add a penup type command as to create gaps in the walls
 
 #Loop for amount of whole walls:
-for i in range(1):
+for i in range(3):
 
 #Doing this to create blank
   for i in range(2):
+    
 
   #Loop for amount of walls:
     for i in range(2):
@@ -71,6 +76,7 @@ for i in range(1):
       wall_list.append(Wall(last_x, last_y, my_width, my_height))
       wall_list[len(wall_list)-1].color(color)
 
+      #wall_list.color("clear") this no work
 
     # Vertical Wall
       my_width = 1
@@ -81,11 +87,16 @@ for i in range(1):
       last_height = my_height
       wall_list.append(Wall(last_x, last_y, my_width, my_height))
       wall_list[len(wall_list)-1].color(color)
+  
+
 
     # Making another beggining notch
-    starting_wall = Wall(last_x - 150, 180, 1, 5)
-    last_x = last_x - 150
-    last_y = 180
+  starting_wall = Wall(last_x - 150, 180, 1, 5)
+  last_x = last_x - 150
+  last_y = 180
+  starting_wall.color(color)
+
+
 
 #Score Board:
 wall_list.append(Wall(256, 190, 4, 4))
