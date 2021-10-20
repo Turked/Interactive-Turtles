@@ -31,14 +31,16 @@ window.setup(screen_width, screen_height)
 
 #Setup:
 wall_list = []
+starting_wall = Wall(randint(250, 300), 180, 1, 5) # I want this to match the others color
 
 
 #Vairaibles:
-starting_wall = Wall(-50, 180, 1, 5)
 last_x = starting_wall.xcor()
 last_y = starting_wall.ycor()
 last_width = starting_wall.x_size
 last_height = starting_wall.y_size
+color = randcolorwall() #Maroon shouldn't exist as a color but it does
+
 
 def callibration():
   notch = [-10, 1, 10]
@@ -48,30 +50,45 @@ def callibration():
 #Creation of the first wall:
 wall_list.append(starting_wall)
 
-#Loop for amount of walls:
-for i in range(5):
+#I wanna add a penup command as to create gaps in the walls
 
-# Horrizontal Wall
-  my_width = randint(3, 6)
-  my_height = 1
-  last_x = last_x + (my_width * callibration()) - 10
-  last_y = last_y - (last_height) * 10
-  last_width = my_width
-  last_height = my_height
-  wall_list.append(Wall(last_x, last_y, my_width, my_height))
+#Loop for amount of whole walls:
+for i in range(1):
 
-# Vertical Wall
-  my_width = 1
-  my_height = randint(3, 6)
-  last_x = last_x + (last_width * 10) - 10
-  last_y = last_y - (my_height) * 10
-  last_width = my_width
-  last_height = my_height
-  wall_list.append(Wall(last_x, last_y, my_width, my_height))
+#Doing this to create blank
+  for i in range(2):
+
+  #Loop for amount of walls:
+    for i in range(2):
+
+    # Horrizontal Wall
+      my_width = randint(3, 6)
+      my_height = 1
+      last_x = last_x + (my_width * callibration()) - 10 #I want it to minus callibration
+      last_y = last_y - (last_height) * 10
+      last_width = my_width
+      last_height = my_height
+      wall_list.append(Wall(last_x, last_y, my_width, my_height))
+      wall_list[len(wall_list)-1].color(color)
+
+
+    # Vertical Wall
+      my_width = 1
+      my_height = randint(3, 6)
+      last_x = last_x + (last_width * callibration()) - 10
+      last_y = last_y - (my_height) * 10
+      last_width = my_width
+      last_height = my_height
+      wall_list.append(Wall(last_x, last_y, my_width, my_height))
+      wall_list[len(wall_list)-1].color(color)
+
+    # Making another beggining notch
+    starting_wall = Wall(last_x - 150, 180, 1, 5)
+    last_x = last_x - 150
+    last_y = 180
 
 #Score Board:
 wall_list.append(Wall(256, 190, 4, 4))
-
 
 '''
 #Vertical walls:
