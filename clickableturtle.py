@@ -41,8 +41,5 @@ class Text(Turtle):
     # This is Placeholder:  What should this button do?
     print ("HA you thought something would happen didn't you")
 
-  # TODO:  
-  # 1) Change the button color (from tan to blue)
-  # 2) make the click method do something else (HA)
 
 

@@ -7,6 +7,7 @@ class Gem (Turtle):
         self.screen_width = screen_width
         self.screen_height = screen_height 
         
+        # Setting the Gem and all of it's propertys
         self.penup()   
         x_location = randint(screen_width/4*-1, screen_width/4)
         y_location = randint(screen_height/4*-1, screen_width/4)

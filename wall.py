@@ -1,10 +1,10 @@
 from turtle import Turtle
-from helper import randcolorwall
 
 
 class Wall (Turtle):
     def __init__(self, starting_x, starting_y, x_size, y_size):
         Turtle.__init__(self)
+        #position
         self.starting_x = starting_x
         self.starting_y = starting_y
         self.x_size = x_size

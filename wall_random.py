@@ -6,6 +6,7 @@ from wall import Wall
 from random import randint
 from time import time
 
+#Wait till done perfecting Mega Walls#
 
 #Setup:
 class WallRandom(Turtle):
@@ -29,13 +30,6 @@ class WallRandom(Turtle):
     wall_list.append(w1)
 
     #Vertical walls:
-    color = randcolorwall() #Maroon shouldn't exist as a color but it does
-    for wall in range (10):
-      wall_list.append(Wall(randint(-300, 300), randint(-200, 200), .5, randint(5, 10)))
-      wall_list[len(wall_list)-1].color(color)
 
+    #Horrizontal walls
 
-    #Horizontal walls:
-    for wall in range (10):
-      wall_list.append(Wall(randint(-300, 300), randint(-200, 200), randint(5, 10), .5))
-      wall_list[len(wall_list)-1].color(color)
