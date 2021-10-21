@@ -10,7 +10,6 @@ class Text(Turtle):
                y = 160):
     # Runs Keyboard Turtle Constructor as well as the Turtle Constructor
     Turtle.__init__(self)
-    
     # Sets up incoming variables
     self.name = name
     self.x = x

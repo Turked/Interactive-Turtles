@@ -7,8 +7,8 @@ from gem import Gem
 from wall import Wall
 from random import randint, choice
 from time import time
-from files import files
-
+from clickableturtle import Text
+import os
 
 # Setting up the screen:
 window = Screen()
@@ -138,6 +138,29 @@ gem = Gem(screen_width, screen_height)
 
 # Setting up collision check:
 player_2.other_player = gem
+
+#High Score:
+changing_file = False
+# Read the current file
+file = open("highscore.txt", "r")
+
+fries = amount #WHY
+if int(fries) > int(file.read()):
+  changing_file = True
+
+
+file.close()
+
+
+# DELETE OLD FILE
+if changing_file:
+  os.remove("highscore.txt")
+
+  # RECREATE THE FILE
+  file = open("highscore.txt", "w")
+  file.write(str(fries))
+  file.close()
+
 
 # This is needed to listen for inputs
 window.listen()
