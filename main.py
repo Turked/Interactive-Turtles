@@ -7,6 +7,7 @@ from gem import Gem
 from wall import Wall
 from random import randint, choice
 from time import time
+from files import files
 
 
 # Setting up the screen:
