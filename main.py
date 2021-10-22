@@ -131,8 +131,7 @@ player_2.color(randcolor())
 gem = Gem(screen_width, screen_height)
 
 #Hishcore:
-updatescore(###) 
-#What do I put here to make it work
+updatescore(player_2) 
 
 #restart = WallRandom()
 
