@@ -16,7 +16,7 @@ def randcolorwall():
   alternative = ["grey", "black", "light green"]
   return choice(alternative)
 
-def updatescore(player_2:
+def updatescore(player_2):
   #High Score:
   changing_file = False
   # Read the current file

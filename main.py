@@ -1,6 +1,6 @@
 #Importation:
 from turtle import Screen
-from helper import randcolor, randcolorwall, randbackground
+from helper import randcolor, randcolorwall, randbackground, updatescore
 from keyboardturtle import KeyboardTurtle
 from wall_random import WallRandom
 from gem import Gem
@@ -129,6 +129,10 @@ player_2 = KeyboardTurtle(window, "w", "s", "a", "d", walls = wall_list)
 player_2.color(randcolor())
 
 gem = Gem(screen_width, screen_height)
+
+#Hishcore:
+updatescore(###) 
+#What do I put here to make it work
 
 #restart = WallRandom()
 
