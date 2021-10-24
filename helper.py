@@ -1,5 +1,4 @@
 # Importation
-from keyboardturtle import KeyboardTurtle
 from random import choice
 import os
 

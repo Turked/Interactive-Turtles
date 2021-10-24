@@ -3,6 +3,8 @@ from turtle import Turtle
 from random import randint
 from clickableturtle import Text
 from time import time
+from helper import updatescore
+
 
 #Setup:
 class KeyboardTurtle(Turtle):
@@ -60,6 +62,7 @@ class KeyboardTurtle(Turtle):
         self.amount += 1
         self.text.draw_title(str(self.amount))
         print("gem collected (" + str(self.amount) + ")")
+        updatescore(self)
         x_location = randint(-180, 180)
         y_location = randint(-180, 180)
         self.other_player.speed(0)
@@ -87,6 +90,7 @@ class KeyboardTurtle(Turtle):
         self.canCollect = False
         self.amount += 1
         print("gem collected (" + str(self.amount) + ")")
+        updatescore(self)
         x_location = randint(-180, 180)
         y_location = randint(-180, 180)
         self.other_player.speed(0)
