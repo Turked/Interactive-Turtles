@@ -1,5 +1,5 @@
 #Importation
-from turtle import Turtle
+from turtle import Turtle, Screen
 from random import randint
 from clickableturtle import Text
 from time import time
@@ -44,6 +44,7 @@ class KeyboardTurtle(Turtle):
     self.movement_speed = 5
     self.turn_speed = 45
     self.collision_distance = 20
+    window = Screen()
 
     self.amount = 0
     self.canCollect = True
@@ -70,6 +71,7 @@ class KeyboardTurtle(Turtle):
         self.other_player.speed(6)
         self.wait(.5)
 
+
     #Check for collision with walls
     if self.walls !=None:
       for wall in self.walls:
@@ -89,6 +91,7 @@ class KeyboardTurtle(Turtle):
       if self.canCollect:
         self.canCollect = False
         self.amount += 1
+        self.text.draw_title(str(self.amount))
         print("gem collected (" + str(self.amount) + ")")
         updatescore(self)
         x_location = randint(-180, 180)
@@ -97,6 +100,7 @@ class KeyboardTurtle(Turtle):
         self.other_player.goto(x_location, y_location)
         self.other_player.speed(6)
         self.wait(.5)
+
 
     #Check for collision with walls
     if self.walls !=None:

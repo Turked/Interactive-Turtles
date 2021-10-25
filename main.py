@@ -70,7 +70,8 @@ for i in range(3):
     # Horrizontal Wall
       my_width = randint(3, 6)
       my_height = 1
-      last_x = last_x + (my_width * callibration()) - 10 #I want it to minus callibration
+      current_callibration = callibration()
+      last_x = last_x + (my_width * current_callibration) - current_callibration #I want it to minus callibration
       last_y = last_y - (last_height) * 10
       last_width = my_width
       last_height = my_height
@@ -79,10 +80,11 @@ for i in range(3):
 
       #wall_list.color("clear") this no work
 
+      current_callibration = callibration()
     # Vertical Wall
       my_width = 1
       my_height = randint(3, 6)
-      last_x = last_x + (last_width * callibration()) - 10
+      last_x = last_x + (last_width * current_callibration) - current_callibration
       last_y = last_y - (my_height) * 10
       last_width = my_width
       last_height = my_height
