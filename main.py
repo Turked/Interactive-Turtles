@@ -32,6 +32,8 @@ window.setup(screen_width, screen_height)
 #Setup:
 wall_list = []
 starting_wall = Wall(randint(250, 300), 180, 1, 5)
+SW_x = randint(250, 300)
+SW_y = 180
 
 
 #Vairaibles:
@@ -51,6 +53,9 @@ def callibration():
   notch = [-10, 1, 10]
   return choice(notch)
 
+def random():
+  rando = [1, 2, 3, 4, 5, 6]
+  return choice(rando)
 
 #Creation of the first wall:
 wall_list.append(starting_wall)
@@ -58,11 +63,12 @@ wall_list.append(starting_wall)
 #I wanna add a penup type command as to create gaps in the walls
 
 #Loop for amount of whole walls:
-for i in range(3):
+for i in range(4):
+
 
 #Doing this to create blank
   for i in range(2):
-    
+
 
   #Loop for amount of walls:
     for i in range(2):
@@ -91,10 +97,12 @@ for i in range(3):
       wall_list.append(Wall(last_x, last_y, my_width, my_height))
       wall_list[len(wall_list)-1].color(color)
   
+    wall_list[len(wall_list)-random()].hideturtle()
 
 
     # Making another beggining notch
-  starting_wall = Wall(last_x - 150, 180, 1, 5)
+  starting_wall = Wall(SW_x-150, 180, 1, 5)
+  SW_x = SW_x - 150
   last_x = last_x - 150
   last_y = 180
   starting_wall.color(color)
