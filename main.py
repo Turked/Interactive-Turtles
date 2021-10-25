@@ -87,7 +87,7 @@ for i in range(4):
       #wall_list.color("clear") this no work
 
       current_callibration = callibration()
-    # Vertical Wall
+      # Vertical Wall
       my_width = 1
       my_height = randint(3, 6)
       last_x = last_x + (last_width * current_callibration) - current_callibration
@@ -96,8 +96,10 @@ for i in range(4):
       last_height = my_height
       wall_list.append(Wall(last_x, last_y, my_width, my_height))
       wall_list[len(wall_list)-1].color(color)
-  
-    wall_list[len(wall_list)-random()].hideturtle()
+    
+    randturtle = len(wall_list)-random()
+    wall_list[randturtle].hideturtle()
+    wall_list.remove(wall_list[randturtle])
 
 
     # Making another beggining notch
