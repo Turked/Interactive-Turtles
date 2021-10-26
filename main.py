@@ -1,14 +1,10 @@
 #Importation:
 from turtle import Screen
-from helper import randcolor, randcolorwall, randbackground, updatescore
+from helper import randcolor, randcolorwall, randbackground
 from keyboardturtle import KeyboardTurtle
-from wall_random import WallRandom
 from gem import Gem
 from wall import Wall
 from random import randint, choice
-from time import time
-from clickableturtle import Text
-import os
 
 # Setting up the screen:
 window = Screen()
