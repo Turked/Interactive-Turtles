@@ -103,9 +103,9 @@ for i in range(4):
 
 
     # Making another beggining notch
-  starting_wall = Wall(SW_x-150, 180, 1, 5)
-  SW_x = SW_x - 150
-  last_x = last_x - 150
+  starting_wall = Wall(SW_x-200, 180, 1, 5)
+  SW_x = SW_x - 200
+  last_x = SW_x
   last_y = 180
   starting_wall.color(color)
 
